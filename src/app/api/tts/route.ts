@@ -69,7 +69,7 @@ export async function POST(req: Request) {
       }
     });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("TTS Generation Error:", error);
     return NextResponse.json(
       { error: "We couldn't generate the Khmer audio. Please check your API configuration and try again." },

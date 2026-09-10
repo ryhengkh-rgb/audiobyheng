@@ -43,8 +43,8 @@ export default function Home() {
       const url = URL.createObjectURL(blob);
       setAudioUrl(url);
       
-    } catch (err: any) {
-      setError(err.message || "We couldn't generate the Khmer audio. Please check your API configuration and try again.");
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : "We couldn't generate the Khmer audio. Please check your API configuration and try again.");
     } finally {
       setIsLoading(false);
     }
